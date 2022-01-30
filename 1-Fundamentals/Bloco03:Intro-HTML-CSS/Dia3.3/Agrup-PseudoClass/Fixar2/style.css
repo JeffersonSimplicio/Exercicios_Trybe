@@ -1,0 +1,17 @@
+div:hover {
+    border: 4px solid;
+    border-color: brown;
+}
+
+#maior{
+    padding: 2px;
+    font-size: 1.5em;
+}
+
+.impar{
+    font-style: italic;
+}
+
+h3{
+    color: crimson;
+}
