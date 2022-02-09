@@ -75,8 +75,10 @@
       }
       titulo();
       function upperCase() {
-        let paragrafo = document.getElementsByTagName('p')[0];
-        paragrafo.innerText = paragrafo.innerText.toUpperCase();
+        let paragrafo = document.getElementsByTagName('p');
+        for (let i in paragrafo) {
+          paragrafo[i].innerText = paragrafo[i].innerText.toUpperCase();
+        }
       }
       upperCase();
       function exibicao() {
