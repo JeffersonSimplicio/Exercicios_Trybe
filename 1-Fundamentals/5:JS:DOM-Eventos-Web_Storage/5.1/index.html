@@ -54,26 +54,31 @@
         5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
         6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
-       function mudaParagrafo() {
-         let paragrafo = document.getElementsByTagName('p')[1];
-         paragrafo.innerText = 'Trabalhando, ganhando bem e me preparando para morar fora';
-       }
-       mudaParagrafo();
-       function cor() {
-         yellow = document.getElementsByClassName('main-content')[0];
-         yellow.style.backgroundColor = 'rgb(76,164,109)'
-       }
-       cor()
-       function corDois() {
-         white = document.getElementsByClassName('center-content')[0];
-         white.style.background = 'white'
-       }
-       corDois();
-       function titulo() {
-        title = document.getElementsByClassName('title')[0];
-        title.innerText = 'Exercício 5.1 - JavaScript';
-       }
-       titulo();
+      function mudaParagrafo() {
+        let paragrafo = document.getElementsByTagName('p')[1];
+        paragrafo.innerText = 'Trabalhando, ganhando bem e me preparando para morar fora';
+      }
+      mudaParagrafo();
+      function cor() {
+        yellow = document.getElementsByClassName('main-content')[0];
+        yellow.style.backgroundColor = 'rgb(76,164,109)'
+      }
+      cor()
+      function corDois() {
+        white = document.getElementsByClassName('center-content')[0];
+        white.style.background = 'white'
+      }
+      corDois();
+      function titulo() {
+      title = document.getElementsByTagName('h1')[0];
+      title.innerText = 'Exercício 5.1 - JavaScript';
+      }
+      titulo();
+      function upperCase() {
+        let paragrafo = document.getElementsByTagName('p')[0];
+        paragrafo.innerText = paragrafo.innerText.toUpperCase();
+      }
+      upperCase();
     </script>
   </body>
 </html>
