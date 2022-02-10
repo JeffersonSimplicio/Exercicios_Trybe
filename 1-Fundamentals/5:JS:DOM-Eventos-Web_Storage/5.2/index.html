@@ -57,7 +57,36 @@
   </head>
   <body>
     <script>
-      // COLOQUE SEU CÓDIGO AQUI
+      let corpo = document.querySelector('body');
+      // Criação, adiçao de conteúdo e exibição do h1
+      let titulo = document.createElement('h1');
+      titulo.innerText = 'Exercício 5.2 - JavaScript DOM';
+      corpo.appendChild(titulo);
+      // Criação, adição de classe do main e exibição do main
+      let principal = document.createElement('main');
+      principal.className = 'main-content';
+      corpo.appendChild(principal)
+      // Criação, adição de classe a seção e exibição do secão1
+      let secao1 = document.createElement('section')
+      secao1.className = 'center-content';
+      principal.appendChild(secao1);
+      // Criação, adição de classe a seção e exibição do paragrafo1
+      let paragrafo1 = document.createElement('p');
+      paragrafo1.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore suscipit molestiae ipsam iusto numquam tenetur magni velit amet minus optio ea est placeat eveniet, illum sit aut asperiores. Pariatur, blanditiis.';
+      secao1.appendChild(paragrafo1);
+      // Criação, adição de classe a seção e exibição do secão2
+      let secao2 = document.createElement('section');
+      secao2.className = 'left-content';
+      principal.appendChild(secao2);
+      // Criação, adição de classe a seção e exibição do secão3
+      let secao3 = document.createElement('section');
+      secao3.className = 'right-content';
+      principal.appendChild(secao3);
+      // Criação, adição de classe a seção e exibição do imagens
+      let imagem = document.createElement('img');
+      imagem.className = 'small-image';
+      imagem.src = 'https://picsum.photos/200' // Adiciona source a uma elemento que utilize link
+      secao2.appendChild(imagem);
     </script>
   </body>
 </html>
