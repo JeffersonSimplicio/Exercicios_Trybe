@@ -57,6 +57,7 @@
   </head>
   <body>
     <script>
+      // Parte 1
       let corpo = document.querySelector('body');
       // Criação, adiçao de conteúdo e exibição do h1
       let titulo = document.createElement('h1');
@@ -70,23 +71,61 @@
       let secao1 = document.createElement('section')
       secao1.className = 'center-content';
       principal.appendChild(secao1);
-      // Criação, adição de classe a seção e exibição do paragrafo1
+      // Criação, adição de classe ao paragrafo1 e exibição do paragrafo1
       let paragrafo1 = document.createElement('p');
       paragrafo1.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore suscipit molestiae ipsam iusto numquam tenetur magni velit amet minus optio ea est placeat eveniet, illum sit aut asperiores. Pariatur, blanditiis.';
       secao1.appendChild(paragrafo1);
-      // Criação, adição de classe a seção e exibição do secão2
+      // Criação, adição de classe a seção2 e exibição do secão2
       let secao2 = document.createElement('section');
       secao2.className = 'left-content';
       principal.appendChild(secao2);
-      // Criação, adição de classe a seção e exibição do secão3
+      // Criação, adição de classe a seção3 e exibição do secão3
       let secao3 = document.createElement('section');
       secao3.className = 'right-content';
       principal.appendChild(secao3);
-      // Criação, adição de classe a seção e exibição do imagens
+      // Criação, adição de classe a imagens e exibição do imagens
       let imagem = document.createElement('img');
       imagem.className = 'small-image';
-      imagem.src = 'https://picsum.photos/200' // Adiciona source a uma elemento que utilize link
+      imagem.src = 'https://picsum.photos/200'; // Adiciona source a uma elemento que utilize link
       secao2.appendChild(imagem);
+      // Criação, adição de classe a lista não ordenada e exibição de lista não ordenada
+      let lista = document.createElement('ul');
+      secao3.appendChild(lista);
+      //Adição de itens a lista
+      let numeros = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis',
+        'Sete', 'Oito', 'Nove', 'Dez'];
+      for (let numero of numeros) {
+        let item = document.createElement('li');
+        item.innerText = numero;
+        lista.appendChild(item);
+      }
+      // Criação e exibição de 3 h3
+      for (let i = 1; i <= 3; i += 1) {
+        let subTitulo3 = document.createElement('h3');
+        subTitulo3.innerText = 'Olá, mundo! ' + i;
+        principal.appendChild(subTitulo3);
+      }
+
+      //Parte 2
+      // Adição de classe ao h1
+      titulo.className = 'title';
+      // Adição de classe aos h3
+      let subTitulo3 = document.querySelectorAll('h3')
+      for (let i = 0; i < 3; i +=1) {
+        subTitulo3[i].className = 'description';
+      }
+      // Remoção da seção2
+      let section2 = document.querySelector('.left-content')
+      principal.removeChild(section2);
+      // Cetralizando seção3
+      let section3 = document.querySelector('.right-content');
+      section3.style.marginRight = 'auto';
+      // Mudando cor de fundo seção1
+      let section1 = document.querySelector('.center-content');
+      section1.style.backgroundColor = 'green';
+      // Removendo os dois últimos elementos ( nove e dez ) da lista
+      lista.lastChild.remove();
+      lista.lastChild.remove();
     </script>
   </body>
 </html>
