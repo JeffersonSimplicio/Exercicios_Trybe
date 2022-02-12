@@ -36,3 +36,30 @@ function displayDays() {
   }
 }
 displayDays();
+
+function newButton(name, ID) {
+  let newButton = document.createElement('button'); // Criando elemento button no JS
+  newButton.id = ID; // Adicionando a ID ao botão
+  newButton.innerText = name; // Adiconando texto ao botão
+  let conteinerButton = document.querySelector('.buttons-container'); // Identificando div pai do botão
+  conteinerButton.appendChild(newButton); // Criando o elemento no HTML
+}
+newButton('Feriados', 'btn-holiday');
+
+function colorHoliday() {
+  let defaultColor = 'rgb(238,238,238)';
+  let contrastColor = 'white';
+  let holidayButton = document.querySelector('#btn-holiday'); // Quem receberar receberar a ação para o disparo dos eventos
+  let holidays =  document.querySelectorAll('.holiday'); // Quem sofrera a reção desencadeada. NodeList - array
+
+  holidayButton.addEventListener('click', function() {
+    for (let i = 0; i < holidays.length; i += 1) {
+      if (holidays[i].style.backgroundColor === contrastColor) {
+        holidays[i].style.backgroundColor = defaultColor;
+      } else {
+        holidays[i].style.backgroundColor = contrastColor;
+      }
+    }
+  });
+}
+colorHoliday();
