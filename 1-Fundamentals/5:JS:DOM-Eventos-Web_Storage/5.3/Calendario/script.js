@@ -113,6 +113,13 @@ function addTask(tarefa) {
   task.innerText = tarefa + '\n';
   tasks.appendChild(task);
 }
-addTask('Olá, Mundo!')
-addTask('Projeto');
-addTask('Socorro');
+addTask('Olá, Mundo!');
+
+function newTask(color) {
+  let tasks = document.querySelector('.my-tasks');
+  let task = document.createElement('div');
+  task.style.backgroundColor = color;
+  task.classList.add('task');
+  tasks.appendChild(task);
+}
+newTask('red');
