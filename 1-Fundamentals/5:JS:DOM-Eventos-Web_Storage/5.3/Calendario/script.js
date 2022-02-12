@@ -83,3 +83,26 @@ function sextou(diaSexta) { // Recebe quais dias são sextas-feiras (números)
 }
 let sextas = [4, 11, 18, 25];
 sextou(sextas);
+
+function mouseIn() {
+  let dia = document.querySelectorAll('.day');
+
+  for (let i = 0; i < dia.length; i += 1) {
+    dia[i].addEventListener('mouseover', function(event) {
+      event.target.style.fontSize = '30px';
+      event.target.style.fontWeight = '600';
+    });
+  }
+}
+function mouseOut() {
+  let dia = document.querySelectorAll('.day');
+
+  for (let i = 0; i < dia.length; i += 1) {
+    dia[i].addEventListener('mouseout', function(event) {
+      event.target.style.fontSize = '20px';
+      event.target.style.fontWeight = '200';
+    });
+  }
+}
+mouseIn();
+mouseOut();
