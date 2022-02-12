@@ -47,8 +47,8 @@ function newButton(name, ID) {
 newButton('Feriados', 'btn-holiday');
 
 function highlightDay(newColor, action, reaction) {
-  let defaultColor = 'rgb(238,238,238)';
-  let contrastColor = newColor;
+  let defaultColor = 'rgb(238,238,238)'; // Cor padrão
+  let contrastColor = newColor; // Cor de destaque
   let holidayButton = document.querySelector(action); // Quem receberar receberar a ação para o disparo dos eventos
   let specialDay =  document.querySelectorAll(reaction); // Quem sofrera a reção desencadeada. NodeList - array
 
@@ -65,3 +65,21 @@ function highlightDay(newColor, action, reaction) {
 highlightDay('white', '#btn-holiday', '.holiday');
 
 newButton('Sexta-feira', 'btn-friday');
+
+function sextou(diaSexta) { // Recebe quais dias são sextas-feiras (números)
+  let buttonSexta = document.querySelector('#btn-friday'); // Identificar botão
+  let dias = document.querySelectorAll('.friday'); // Identificar dias com a classe "fridey"
+  let texto = 'SEXTOU O/';
+
+  buttonSexta.addEventListener('click', function() {
+    for (let i = 0; i < diaSexta.length; i +=  1) {
+      if (dias[i].innerText !== texto) {
+        dias[i].innerText = texto;
+      } else{
+        dias[i].innerText = diaSexta[i];
+      }
+    }
+  });
+}
+let sextas = [4, 11, 18, 25];
+sextou(sextas);
