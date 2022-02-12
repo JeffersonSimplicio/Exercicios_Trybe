@@ -46,20 +46,22 @@ function newButton(name, ID) {
 }
 newButton('Feriados', 'btn-holiday');
 
-function colorHoliday() {
+function highlightDay(newColor, action, reaction) {
   let defaultColor = 'rgb(238,238,238)';
-  let contrastColor = 'white';
-  let holidayButton = document.querySelector('#btn-holiday'); // Quem receberar receberar a ação para o disparo dos eventos
-  let holidays =  document.querySelectorAll('.holiday'); // Quem sofrera a reção desencadeada. NodeList - array
+  let contrastColor = newColor;
+  let holidayButton = document.querySelector(action); // Quem receberar receberar a ação para o disparo dos eventos
+  let specialDay =  document.querySelectorAll(reaction); // Quem sofrera a reção desencadeada. NodeList - array
 
   holidayButton.addEventListener('click', function() {
-    for (let i = 0; i < holidays.length; i += 1) {
-      if (holidays[i].style.backgroundColor === contrastColor) {
-        holidays[i].style.backgroundColor = defaultColor;
+    for (let i = 0; i < specialDay.length; i += 1) {
+      if (specialDay[i].style.backgroundColor === contrastColor) {
+        specialDay[i].style.backgroundColor = defaultColor;
       } else {
-        holidays[i].style.backgroundColor = contrastColor;
+        specialDay[i].style.backgroundColor = contrastColor;
       }
     }
   });
 }
-colorHoliday();
+highlightDay('white', '#btn-holiday', '.holiday');
+
+newButton('Sexta-feira', 'btn-friday');
