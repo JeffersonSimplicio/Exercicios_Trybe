@@ -106,3 +106,13 @@ function mouseOut() {
 }
 mouseIn();
 mouseOut();
+
+function addTask(tarefa) {
+  let tasks = document.querySelector('.my-tasks');
+  let task = document.createElement('span');
+  task.innerText = tarefa + '\n';
+  tasks.appendChild(task);
+}
+addTask('Olá, Mundo!')
+addTask('Projeto');
+addTask('Socorro');
