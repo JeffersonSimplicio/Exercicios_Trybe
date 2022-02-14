@@ -110,10 +110,10 @@ mouseOut();
 function addTask(tarefa) {
   let tasks = document.querySelector('.my-tasks');
   let task = document.createElement('span');
-  task.innerText = tarefa + '\n';
+  task.innerText = tarefa;
   tasks.appendChild(task);
 }
-addTask('Olá, Mundo!');
+addTask('Projeto:');
 
 function newTask(color) {
   let tasks = document.querySelector('.my-tasks');
