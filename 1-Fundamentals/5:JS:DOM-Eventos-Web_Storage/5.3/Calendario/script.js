@@ -123,3 +123,17 @@ function newTask(color) {
   tasks.appendChild(task);
 }
 newTask('red');
+
+function taskSelected() {
+  let selected = document.getElementsByClassName('task selected');
+  let task = document.querySelector('.task');
+
+  task.addEventListener('click', function(event) {
+    if (selected.length === 0) {
+      event.target.className = 'task selected';
+    } else {
+      event.target.className = 'task';
+    }
+  });
+}
+taskSelected();
