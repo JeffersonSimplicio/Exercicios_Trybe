@@ -137,3 +137,21 @@ function taskSelected() {
   });
 }
 taskSelected();
+
+function dayColor() {
+  let taskSelected = getElementsByClassName('task selected');
+  let days = querySelector('#days');
+  let task = querySelector('.task');
+  let color = task.style.backgroundColor;
+  
+  days.addEventListener('click', function(event) {
+    let dayColor = event.target.style.color;
+    if (taskSelected.length > 0 && dayColor !== color) {
+      let cor = taskSelected[0].style.backgroundColor;
+      event.target.style.color = cor;
+    } else if (dayColor === color && taskSelected.length !== 0) {
+      event.target,style.color = 'rgb(119,119,119)';
+    }
+  });
+}
+dayColor();
