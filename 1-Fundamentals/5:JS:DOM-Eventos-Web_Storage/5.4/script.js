@@ -23,6 +23,12 @@ window.onload = () => {
     localStorage.setItem('lineHeight', height);
   }
 
+  function setFontFamily(family) {
+    let body = document.querySelector('body');
+    body.style.fontFamily = family;
+    localStorage.setItem('fontFamily', family);
+  }
+
   // Mudança de background-color
   let backgroundColorButton = document.querySelectorAll('#background-color>button');
   for (let i = 0; i < backgroundColorButton.length; i += 1) {
@@ -55,6 +61,14 @@ window.onload = () => {
     });
   }
 
+  // Mudança na familia da fonte
+  let fontFamilyButton = document.querySelectorAll('#font-family>button');
+  for (let i = 0; i < fontFamilyButton.length; i += 1) {
+    fontFamilyButton[i].addEventListener('click', (event) => {
+      setFontFamily(event.target.innerText);
+    });
+  }
+
   // Coloca as cores ao reiniciar a pagina
   function startup() {
     let backgroundColor = localStorage.getItem('backgroundColor');
@@ -72,6 +86,10 @@ window.onload = () => {
     let lineHeight = localStorage.getItem('lineHeight')
     if (lineHeight !== null) {
       setLineHeight(lineHeight);
+    }
+    let fontFamily = localStorage.getItem('fontFamily');
+    if (fontFamily !== null) {
+      setFontFamily(fontFamily);
     }
   }
   startup();
