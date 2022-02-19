@@ -17,6 +17,12 @@ window.onload = () => {
     localStorage.setItem('fontSize', size);
   }
 
+  function setLineHeight(height) {
+    let body = document.querySelector('body');
+    body.style.lineHeight = height;
+    localStorage.setItem('lineHeight', height);
+  }
+
   // Mudança de background-color
   let backgroundColorButton = document.querySelectorAll('#background-color>button');
   for (let i = 0; i < backgroundColorButton.length; i += 1) {
@@ -41,6 +47,14 @@ window.onload = () => {
     });
   }
 
+  // Mudança do espaçamento entre linhas
+  let lineHeightButton = document.querySelectorAll('#line-height>button');
+  for (let i = 0; i < lineHeightButton.length; i += 1) {
+    lineHeightButton[i].addEventListener('click', (event) => {
+      setLineHeight(event.target.innerText);
+    });
+  }
+
   // Coloca as cores ao reiniciar a pagina
   function startup() {
     let backgroundColor = localStorage.getItem('backgroundColor');
@@ -54,6 +68,10 @@ window.onload = () => {
     let fontSize = localStorage.getItem('fontSize');
     if(fontSize !== null) {
       setFontSize(fontSize);
+    }
+    let lineHeight = localStorage.getItem('lineHeight')
+    if (lineHeight !== null) {
+      setLineHeight(lineHeight);
     }
   }
   startup();
