@@ -1,8 +1,4 @@
-main {
-  text-align: justify;
-  width: 80%;
-  margin: auto;
-}
-main h1 {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
