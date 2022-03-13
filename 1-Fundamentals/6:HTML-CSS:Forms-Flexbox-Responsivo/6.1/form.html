@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+<body>
+  <h1>Adicione sua ficha</h1>
+  <form>
+    <fieldset>
+      <label for="fullName">Nome Completo::</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" maxlength="40" minlength="10" required>
+      <br>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" maxlength="50"   minlength="10" required>
+      <br>
+      <input type="radio" name="destinations" id="destiny1" value="Cidade" required>
+      <label for="destiny1">Cidade</label>
+      <input type="radio" name="destinations" id="destiny2" value="Campo" required>
+      <label for="destiny2">Campo</label>
+      <input type="radio" name="destinations" id="destiny3" value="Praia" required>
+      <label for="destiny3">Praia</label>
+      <input type="radio" name="destinations" id="destiny4" value="Montanhas" required>
+      <label for="destiny4">Montanhas</label>
+      <br>
+      <label for="why">Fale mais sobre você:</label>
+      <br>
+      <textarea name="why" id="why" cols="60" rows="10" maxlength="500" placeholder="Digite sua resposta vencedora aqui"></textarea>
+      <br>
+      <label for="date">Qual a data para realizar a viagem?</label>
+      <input type="date" name="date" id="date">
+      <br>
+      <label for="disclosure">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+      <input type="checkbox" name="disclosure" id="disclosure">
+      <br>
+      <label for="imageUse">Concordo que imagens de minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+      <input type="checkbox" name="imageUse" id="imageUse" required>
+    </fieldset>
+    <button type="submit" id="submit-btn">Enviar</button>
+    <button type="button" id="clear-btn">LImpar</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
