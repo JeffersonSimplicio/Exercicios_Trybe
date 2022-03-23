@@ -12,8 +12,9 @@ const fetchCurrency = async () => {
 const setCurrency = async () => {
   const arrayCurrency = await fetchCurrency();
   const list = document.getElementById('currency-list');
+  const top10 = arrayCurrency.filter((arrayCurrency) => arrayCurrency.rank <= 10);
 
-  arrayCurrency.forEach(object => {
+  top10.forEach(object => {
     const newLi = document.createElement('li');
     const dollarValue = Number(object.priceUsd);
     
@@ -21,6 +22,5 @@ const setCurrency = async () => {
     list.appendChild(newLi);
   });
 };
-
 
 window.onload = () => setCurrency();
