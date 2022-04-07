@@ -4,21 +4,34 @@ class App extends React.Component {
 
   constructor() {
     super();
+
     this.clickedOne = this.clickedOne.bind(this);
     this.clickedTwo = this.clickedTwo.bind(this);
     this.clickedThree = this.clickedThree.bind(this);
+
+    this.state = {
+      clicksBtnOne: 0,  
+      clicksBtnTwo: 0,
+      clicksBtnThree: 0,
+    }
   }
 
   clickedOne() {
-    console.log('O this do 1 é:', this);
+    this.setState = ((previousState) => ({
+      clicksBtnOne: previousState.clickedOne + 1,
+    }));
   };
   
   clickedTwo() {
-    console.log('O this do 2 é:', this);
+    this.setState = ((previousState) => ({
+      clicksBtnTwo: previousState.clickedTwo + 1,
+    }));
   };
   
   clickedThree() {
-    console.log('O this do 3 é:', this);
+    this.setState = ((previousState) => ({
+      clicksBtnThree: previousState.clickedThree + 1,
+    }));
   };
 
   render() {
