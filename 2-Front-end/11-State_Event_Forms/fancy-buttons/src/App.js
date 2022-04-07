@@ -17,29 +17,49 @@ class App extends React.Component {
   }
 
   clickedOne() {
-    this.setState = ((previousState) => ({
-      clicksBtnOne: previousState.clickedOne + 1,
+    this.setState((previousState) => ({
+      clicksBtnOne: previousState.clicksBtnOne + 1,
     }));
   };
   
   clickedTwo() {
-    this.setState = ((previousState) => ({
-      clicksBtnTwo: previousState.clickedTwo + 1,
+    this.setState((previousState) => ({
+      clicksBtnTwo: previousState.clicksBtnTwo + 1,
     }));
   };
   
   clickedThree() {
-    this.setState = ((previousState) => ({
-      clicksBtnThree: previousState.clickedThree + 1,
+    this.setState((previousState) => ({
+      clicksBtnThree: previousState.clicksBtnThree + 1,
     }));
   };
 
+  buttonColor(num) {
+    return num % 2 === 0 ? 'green' : 'white';
+  }
+
   render() {
+    const { clicksBtnOne, clicksBtnTwo, clicksBtnThree } = this.state;
     return (
       <>
-        <button onClick={ this.clickedOne }>Botão 1!</button>
-        <button onClick={ this.clickedTwo }>Botão 2!</button>
-        <button onClick={ this.clickedThree }>Botão 3!</button>
+        <button
+          style={{ backgroundColor: this.buttonColor(clicksBtnOne) }}
+          onClick={ this.clickedOne }
+        >
+          Botão 1! | count = { clicksBtnOne }
+        </button>
+        <button
+          style={{ backgroundColor: this.buttonColor(clicksBtnTwo) }}
+          onClick={ this.clickedTwo }
+        >
+          Botão 2! | count = { clicksBtnTwo }
+        </button>
+        <button
+          style={{ backgroundColor: this.buttonColor(clicksBtnThree) }}
+          onClick={ this.clickedThree }
+        >
+          Botão 3! | count = { clicksBtnThree }
+        </button>
       </>
     )
   }
