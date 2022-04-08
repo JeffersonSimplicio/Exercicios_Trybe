@@ -16,27 +16,32 @@ class App extends React.Component {
     }
   }
 
+  buttonColor(num) {
+    return num % 2 === 0 ? 'green' : 'white';
+  }
+
   clickedOne() {
-    this.setState((previousState) => ({
+    this.setState(((previousState) => ({
       clicksBtnOne: previousState.clicksBtnOne + 1,
-    }));
+    })), () => {
+      console.log(`Botão 1 ${this.buttonColor(this.state.clicksBtnOne)}`);
+    });
+    // console.log(`Botão 1, cor: ${this.buttonColor(this.state.clicksBtnOne)}`);
   };
   
   clickedTwo() {
     this.setState((previousState) => ({
       clicksBtnTwo: previousState.clicksBtnTwo + 1,
     }));
+    console.log(`Botão 2, cor: ${this.buttonColor(this.state.clicksBtnOne)}`);
   };
   
   clickedThree() {
     this.setState((previousState) => ({
       clicksBtnThree: previousState.clicksBtnThree + 1,
     }));
+    console.log(`Botão 3, cor: ${this.buttonColor(this.state.clicksBtnOne)}`);
   };
-
-  buttonColor(num) {
-    return num % 2 === 0 ? 'green' : 'white';
-  }
 
   render() {
     const { clicksBtnOne, clicksBtnTwo, clicksBtnThree } = this.state;
